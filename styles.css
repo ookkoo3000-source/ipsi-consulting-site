@@ -5,3 +5,26 @@
 .notice{background:var(--mist);border:1px solid var(--line);padding:18px 22px;font-size:13px;line-height:1.85;color:var(--muted);margin:0 0 30px;max-width:760px}
 .prose{max-width:760px}.prose h2{font:700 26px var(--serif);margin:44px 0 14px}.prose h2:first-child{margin-top:0}.prose h3{font-size:16px;margin:26px 0 8px}.prose p,.prose li{color:var(--muted);font-size:14px;line-height:1.9}.prose ul{padding-left:20px;margin:10px 0}.prose table{margin:14px 0 26px}
 @media(max-width:850px){.legal{margin-top:16px}}
+.hero-chips{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px}
+.hero-chips span{border:1px solid var(--line);background:#fff;padding:9px 14px;border-radius:3px;font-size:12.5px;font-weight:700;color:var(--ink)}
+.teacher-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.teacher{border:1px solid var(--line);background:var(--paper);overflow:hidden}
+.teacher-photo{aspect-ratio:1;background:var(--mist);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;text-align:center;padding:10px}
+.teacher-body{padding:16px}
+.teacher-body b{display:block;font:700 16px var(--serif);margin-bottom:8px}
+.teacher-body span{display:block;font-size:12px;color:var(--muted);line-height:1.75}
+.report-card{border:1px solid var(--line);background:#fff;max-width:640px}
+.report-head{background:var(--ink);color:#fff;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.report-head b{font:700 15px var(--serif)}
+.report-head span{font-size:12px;color:#c8d9de}
+.report-body{margin:0}
+.report-body>div{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:14px 22px;border-top:1px solid var(--line)}
+.report-body dt{margin:0;font-size:12.5px;font-weight:800;color:var(--red)}
+.report-body dd{margin:0;font-size:13.5px;color:var(--ink);line-height:1.75}
+.price-teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.price-teaser{border:1px solid var(--line);padding:26px 22px;background:var(--paper)}
+.price-teaser h3{font:700 18px var(--serif);margin:0 0 10px}
+.price-teaser .price{display:block;margin-bottom:10px}
+.price-teaser .note{font-size:12px;color:var(--muted);line-height:1.75;display:block;margin-bottom:16px}
+.price-teaser .more{font-size:12px;font-weight:800;color:var(--blue)}
+@media(max-width:850px){.teacher-grid{grid-template-columns:1fr 1fr}.report-body>div{grid-template-columns:1fr}.price-teaser-grid{grid-template-columns:1fr}}
