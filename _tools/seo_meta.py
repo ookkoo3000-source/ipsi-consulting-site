@@ -3,7 +3,7 @@ from urllib.parse import quote
 BASE = "https://primeadmit.co.kr"
 BRAND = "스터디코칭 ON"
 def esc(s): return s.replace("&","&amp;").replace('"',"&quot;")
-def ld(obj): return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</","<\/") + '</script>'
+def ld(obj): return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + '</script>'
 def tags(title, desc, path, otype="website", image=None, extra=""):
     url = BASE + "/" + quote(path) if path else BASE + "/"
     t = f'<link rel="canonical" href="{url}"><meta property="og:type" content="{otype}"><meta property="og:site_name" content="{BRAND}"><meta property="og:locale" content="ko_KR"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{url}">'
@@ -13,20 +13,20 @@ def tags(title, desc, path, otype="website", image=None, extra=""):
     return t + extra, url
 def crumbs(items):
     return {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":u} for i,(n,u) in enumerate(items)]}
-ORG = {"@type":"EducationalOrganization","@id":BASE+"/#org","name":BRAND,"url":BASE+"/","telephone":"+82-10-3131-5305","description":"초등·중학생·고등학생 대상 1:1 대면(방문)과외와 화상과외"}
+ORG = {"@type":"EducationalOrganization","@id":BASE+"/#org","name":BRAND,"url":BASE+"/","telephone":"+82-10-3131-5305","description":"초등학생·중학생·고등학생 대상 1:1 대면(방문)과외, 비대면 화상과외, 수학과외·영어과외 내신 관리"}
 TOP = {
  "index.html": ("대면과외·화상과외 | 중학생 과외·고등학교 과외 | 스터디코칭 ON",
-   "중학생 과외·고등학교 과외를 찾는다면 1:1 대면(방문)과외와 화상과외 중 맞는 방식을 상담으로 정하세요. 30분 무료 체험수업으로 선생님을 먼저 만나볼 수 있습니다."),
+   "초등·중학생·고등학생 1:1 과외. 대면(방문)과외와 비대면 화상과외 중 맞는 방식을 상담으로 정하고, 수학과외·영어과외 내신 관리까지 30분 무료 체험수업으로 먼저 확인해 보세요."),
  "visiting.html": ("대면과외(방문과외) | 중학생·고등학교 1:1 방문 수업 | 스터디코칭 ON",
-   "선생님이 직접 찾아가는 1:1 대면과외(방문과외). 중학생 과외·고등학교 과외 모두 학생 상황에 맞는 선생님과 학습 관리 방식을 상담으로 안내해 드립니다."),
+   "선생님이 직접 찾아가는 1:1 대면과외(방문과외). 중학생 과외·고등학교 과외, 수학과외·영어과외 내신 과외를 학생 상황에 맞춰 상담으로 안내해 드립니다."),
  "online.html": ("화상과외 | 중학생·고등학교 1:1 실시간 화상 수업 | 스터디코칭 ON",
-   "이동 시간 없이 집에서 받는 1:1 화상과외. 중학생 과외·고등학교 과외 내신·개념 관리를 실시간 화면 공유로 진행하며, 지역 제약 없이 선생님을 만날 수 있습니다."),
+   "이동 시간 없는 1:1 화상과외(비대면과외). 중학생 과외·고등학교 과외, 수학과외·영어과외 내신 관리를 실시간 화면 공유로 진행하며 지역 제약 없이 과외 선생님을 만날 수 있습니다."),
  "about.html": ("회사 소개 | 대면과외·화상과외 스터디코칭 ON",
    "스터디코칭 ON 회사 소개. 1:1 대면과외와 화상과외를 함께 운영하는 기준, 운영 철학과 선생님 선발 기준을 안내합니다."),
  "reviews.html": ("수업 사례 | 대면과외·화상과외 진행 방식 | 스터디코칭 ON",
    "대면과외와 화상과외가 실제로 어떻게 진행되는지 수업 사례로 소개합니다. 중학생·고등학생 학습 관리 흐름을 확인해 보세요."),
  "blog.html": ("블로그 | 중학생 과외·고등학교 과외 학습 전략 | 스터디코칭 ON",
-   "중학생 과외, 고등학교 과외 학습 전략과 지역별 대면과외·화상과외 안내 글 모음. 스터디코칭 ON 블로그에서 내신 대비 방법을 확인하세요."),
+   "중학생 과외·고등학교 과외, 수학과외·영어과외 내신 과외 학습 전략과 지역별 대면과외·화상과외 안내 글 모음."),
 }
 HERO_ADD = {
  "index.html": ('<p class="lead">1:1 방문 수업과 1:1 화상 수업 — 정하기 전에 30분 무료 수업으로 선생님과 먼저 만나보세요. 맞지 않으면 언제든 다른 선생님으로 바꿔드립니다.</p>',
