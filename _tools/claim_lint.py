@@ -50,7 +50,8 @@ SCHOOL_OR_REGION_CLAIM_PATTERNS = [
     r"학원\s*(?:밀집도|환경|선택지)[^.]{0,10}(?:높|낮|많|적|좋|제한)",
     r"학군[^.]{0,10}(?:좋|높|치열|유명)",
     r"경쟁이?\s*(?:매우\s*)?치열",
-    r"로\s*알려(?:져|진)",
+    r"(?:로|라)\s*알려(?:져|진)",
+    r"기로\s*유명",
     r"[가-힣]+만의\s*(?:차별화된|독자적인|고유한|특화된)\s*(?:교수법|강점|비법|전략)",
     r"자율형\s*사립|전국\s*단위에서[^.]{0,15}모이는",
     # school/region-specific difficulty asserted as settled fact, either word order
